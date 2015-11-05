@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content = "height = device-height, width = 420, user-scalable = no" /> 
+	<title>WebIOPi | Server Room Temperature</title>
+	<script type="text/javascript" src="/webiopi.js"></script>
+	<script type="text/javascript">
+	webiopi().ready(function() {
+		var content, button;
+		content = $("#content");
+
+        // create a button label for the Reset Switch for GPIO 18 (will display state of reset button)
+		button = webiopi().createGPIOButton(18, "Reset Switch");
+		content.append(button); 
+		
+		// create a button to call the reset range macro
+        button = webiopi().createButton("resetRange", "Reset Range", callResetMacro);
+		content.append(button);
+		
+		// create a button to call the get temperature macro
+		button = webiopi().createButton("getTemp", "Get Temps", callTempMacro);
+		content.append(button);
+
+		webiopi().refreshGPIO(true);
+
+		// create a temperature display
+		var device = webiopi().newDevice("Temperature", "ServerRoom");
+		if (device) {
+			device.element = $("<div>");
+			content.append(device.element);
+			device.refreshUI();
+		}
+
+	});
+		
+		
+	function callResetMacro() {
+		// call resetRange
+	    webiopi().callMacro("ResetTempRange", null);
+	}
+	
+	function callTempMacro() {
+		// call getTemperature
+	    webiopi().callMacro("GetSensorTemp", null, callTempMacroCallback);
+	}
+	
+	function callTempMacroCallback(macro, args, data) {
+		alert(data);
+	}
+	
+	</script>
+	<style type="text/css">
+		button {
+			display: block;
+			margin: 5px 5px 5px 5px;
+			width: 300px;
+			height: 45px;
+			font-size: 24pt;
+			font-weight: bold;
+			color: black;
+		}
+		
+		input[type="range"] {
+			display: block;
+			width: 160px;
+			height: 45px;
+		}
+		
+		.LOW {
+			background-color: #FF9900;
+		}
+		
+		.HIGH {
+			background-color: #CCCCFF;
+		}
+	</style>
+</head>
+<body>
+	<div id="content" align="center"></div>
+</body>
+</html>
+
