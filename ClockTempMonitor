@@ -1,0 +1,29 @@
+#! /bin/sh
+# /etc/init.d/ClockTempMonitor 
+
+### BEGIN INIT INFO
+# Provides:          Eduardo
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Clock and monitor temperature with a LCD
+# Description:       Project Raspberry Pi for a clock and monitor temperature with a LCD 16x2.
+### END INIT INFO
+
+case "$1" in
+  start)
+    echo "Starting Script"
+    sudo python /home/pi/clock-temp-monitor/ClockTempMonitor.py
+    ;;
+  stop)
+    echo "Stopping Script"
+    killall ClockTempMonitor
+    ;;
+  *)
+    echo "Usage: /etc/init.d/ClockTempMonitor {start|stop}"
+    exit 1
+    ;;
+esac
+
+exit 0

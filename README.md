@@ -37,12 +37,19 @@ Just run in the console this commands:
 	# Fix w1-gpio
 	dtoverlay=w1-gpio-pullup,gpiopin=4
 
-### Copy scripts and html files in raspberry
+### Copy scripts in Raspberry Pi
 
 	mkdir clock-temp-monitor
 	cd clock-temp-monitor
-	# Copy files in the raspberry rep folder
+	# Copy files from the raspberry github Repository folder in the folder clock-temp-monitor
 	sudo chmod +x *
+
+### Start-up script in Raspberry Pi
+
+	sudo nano /etc/init.d/ClockTempMonitor
+	# Copy and paste in the console the file ClockTempMonitor
+	sudo chmod 755 /etc/init.d/ClockTempMonitor
+	sudo update-rc.d ClockTempMonitor defaults
 
 -----
 
