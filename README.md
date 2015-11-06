@@ -1,25 +1,21 @@
 # Raspberry Pi Clock and Temperature Monitor
 Project Raspberry Pi for a clock and monitor temperature with a LCD 16x2
 
-`Version: 1.0.0 Stable`
+`Version: 1.5.0 Stable`
 
 -----
 
 ## Requirements
 
 * Ubuntu, Mac, Windows
-* Raspberry Pi, 
+* Raspberry Pi 1 Model B
 * Python, HTML, CSS
 * LCD 16x2
 
-## Project base on:
-
-	http://www.rototron.info/projects/pi-temperature-monitor/
-
 -----
 
-# Quick Install in Raspberry Pi
-Just run in the console this commands:
+# Quick Install
+Just run in the console this commands in the Raspberry Pi:
 
 	sudo easy_install -U distribute
 	sudo apt-get install python-pip
@@ -31,6 +27,21 @@ Just run in the console this commands:
 	sudo webiopi-passwd
 	sudo /etc/init.d/webiopi start
 	sudo update-rc.d webiopi defaults
+
+# Circuits
+
+How to conect Raspberry Pi to LCD 16x2
+
+![alt tag](https://raw.githubusercontent.com/eduardogch/raspberry-pi-montemp/master/circuits/circuit.png)
+
+How to conect Raspberry Pi to Temperature Sendor
+![alt tag](https://raw.githubusercontent.com/eduardogch/raspberry-pi-montemp/master/circuits/DS18B20-rpi-setup-3.JPG)
+
+Raspberry Pi GPIO's
+
+![alt tag](https://raw.githubusercontent.com/eduardogch/raspberry-pi-montemp/master/circuits/raspberry-pi-rev2-gpio-pinout.jpg)
+
+-----
 
 ### Fix broke the WebIOPi 1-wire code
 	sudo nano /boot/config.txt
