@@ -21,9 +21,11 @@ Project Raspberry Pi for a clock and monitor temperature with a LCD 16x2
 # Quick Install in Raspberry Pi
 Just run in the console this commands:
 
-	sudo easy_install -U distribute
-	sudo apt-get install python-pip
-	sudo pip install rpi.gpio
+sudo easy_install -U distribute
+sudo apt-get install python-pip
+sudo pip install rpi.gpio
+
+
 	wget http://sourceforge.net/projects/webiopi/files/WebIOPi-0.7.1.tar.gz
 	tar xvzf WebIOPi-0.7.1.tar.gz
 	cd WebIOPi-0.7.1
@@ -41,7 +43,9 @@ Just run in the console this commands:
 
 	mkdir clock-temp-monitor
 	cd clock-temp-monitor
-	# Copy files in the raspberry rep folder
+	wget https://github.com/eduardogch/raspberry-pi-montemp/blob/master/raspberry/index01.html
+	wget https://github.com/eduardogch/raspberry-pi-montemp/blob/master/raspberry/lcd.py
+	wget https://github.com/eduardogch/raspberry-pi-montemp/blob/master/raspberry/script01.py
 	sudo chmod +x *
 
 -----
