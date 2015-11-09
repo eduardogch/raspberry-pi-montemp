@@ -13,7 +13,7 @@ Project Raspberry Pi for a clock and monitor temperature with a LCD 16x2
 * LCD 16x2
 
 ## Video
-![alt tag](https://www.youtube.com/watch?v=mBpfsGmuFqE)
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/mBpfsGmuFqE/0.jpg)](http://www.youtube.com/watch?v=mBpfsGmuFqE)
 
 -----
 
