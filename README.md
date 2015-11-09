@@ -12,6 +12,9 @@ Project Raspberry Pi for a clock and monitor temperature with a LCD 16x2
 * Python, HTML, CSS
 * LCD 16x2
 
+## Video
+![alt tag](https://www.youtube.com/watch?v=mBpfsGmuFqE)
+
 -----
 
 # Quick Install
